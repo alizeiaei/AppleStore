@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Almarai&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+/* ------------root-------------- */
+
+:root {
+  --navbar-color: rgba(157, 53, 202, 0.849);
+  --primery-color: RGB(239, 240, 242);
+  --button-color: RGB(50, 131, 224);
+}
+
+/* ----------------navbar--------------- */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--navbar-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  z-index: 5;
+}
+
+.navbar i {
+  font-size: 25px;
+  color: var(--primery-color);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.navbar i:hover {
+  transform: scale(1.2);
+}
+
+.navbar i:active {
+  color: rgb(18, 227, 18);
+}
+
+.number-products {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: red;
+  border-radius: 50%;
+  padding: 0.3rem;
+  padding-left: 0.5rem;
+  color: white;
+  position: absolute;
+  top: 5px;
+}
+
+.navbar h4 {
+  font-family: "Almarai", sans-serif;
+  font-size: 25px;
+  color: var(--primery-color);
+}
+
+/* ----------------header---------------- */
+
+.header {
+  width: 100%;
+  height: auto;
+  padding: 5rem;
+}
+
+.header h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* --------------container------------- */
+
+.container {
+  width: 100%;
+  height: auto;
+  padding-left: 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  row-gap: 2rem;
+}
+
+/* -------------product------------ */
+
+.product {
+  width: 22rem;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.product .price {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  column-gap: 4rem;
+}
+
+.product img {
+  width: 22rem;
+  border-radius: 5px;
+}
+
+.product button {
+  background-color: var(--button-color);
+  color: white;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product button:hover {
+  box-shadow: 12px 8px 5px 1px rgba(0, 0, 255, 0.2);
+}
+
+/* -----------------------backdrop----------------- */
+
+.backdrop {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 6;
+}
+
+/* ----------------------cart---------------------- */
+
+.cart {
+  position: absolute;
+  top: -1000rem;
+  left: 50%;
+  width: 32rem;
+  height: auto;
+  background-color: white;
+  border-radius: 10px;
+  transform: translate(-50%);
+  transition: 0.4s ease-in-out;
+  z-index: 10;
+}
+
+@media only screen and (max-width: 530px) {
+  .cart {
+    width: 25rem;
+  }
+  .container {
+    padding-left: 2rem;
+  }
+}
+
+.cart h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.amount-order-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.amount-order-cart .fa-chevron-up {
+  color: var(--navbar-color);
+}
+
+.amount-order-cart .fa-chevron-down {
+  color: red;
+}
+
+.trash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.trash i {
+  font-size: 20px;
+  color: red;
+  cursor: pointer;
+}
+
+.amount-order-cart i {
+  cursor: pointer;
+}
+
+.cart .item img {
+  width: 6rem;
+  height: 4rem;
+}
+
+.cart .price {
+  margin-top: 1rem;
+}
+
+.cart .price h5 {
+  margin-top: 0.5rem;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+/*  ----------------buttons----------------- */
+
+.buttons {
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  padding-left: 3rem;
+  padding-bottom: 1rem;
+}
+
+.buttons h4 {
+  color: gray;
+  font-weight: 300;
+}
+
+.buttons .clear-cart {
+  width: 7rem;
+  border: 1px solid black;
+  border-radius: 12px;
+  padding: 0.5rem;
+  background-color: transparent;
+  color: var(--navbar-color);
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.buttons .clear-cart:hover {
+  background-color: var(--navbar-color);
+  color: white;
+}
+
+.buttons .confirm {
+  width: 5rem;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 0.7rem;
+  color: var(--navbar-color);
+  background-color: rgba(157, 53, 202, 0.104);
+  border: none;
+  transition: 0.2s ease-in-out;
+}
+
+.buttons .confirm:hover {
+  background-color: var(--navbar-color);
+  color: white;
+}
+
+/* ------end------ */
